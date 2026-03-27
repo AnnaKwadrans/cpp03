@@ -2,25 +2,27 @@
 
 ClapTrap::ClapTrap(void) : _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-        std::cout << "Default constructor called" << std::endl;
+        std::cout << "ClapTrap: Default constructor called" << std::endl;
         return ;
 }
 
 ClapTrap::ClapTrap(std:: string name) : _name(name),  _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-        std::cout << "Parametrized constructor called" << std::endl;
+        std::cout << "ClapTrap: Parametrized constructor called" << std::endl;
         return ;
 }
 
-ClapTrap::ClapTrap(ClapTrap const & cpy) : _name(cpy.getName())
+ClapTrap::ClapTrap(ClapTrap const & cpy)
 {
-        std::cout << "Copy constructor called" << std::endl;
+        std::cout << "ClapTrap: Copy constructor called" << std::endl;
+        *this = cpy;
+
         return ;
 }
 
-ClapTrap&       ClapTrap::operator=(ClapTrap const & src)
+ClapTrap&       ClapTrap::operator=(ClapTrap const & src) // mensaje personalizado?
 {
-        std::cout << "Copy assign operator called" << std::endl;
+        std::cout << "ClapTrap: Copy assign operator called" << std::endl;
         if (this != &src)
         {
                 _name = src.getName();
@@ -33,7 +35,7 @@ ClapTrap&       ClapTrap::operator=(ClapTrap const & src)
 
 ClapTrap::~ClapTrap(void)
 {
-        std::cout << "Destructor called" << std::endl;
+        std::cout << "ClapTrap: Destructor called" << std::endl;
         return ;
 }
 
@@ -79,7 +81,7 @@ void            ClapTrap::setAttackDamage(int attackDamage)
 
 void            ClapTrap::attack(const std::string& target)
 {
-        std::cout << _name << " attacks " << target << ". ";
+        std::cout << "ClapTrap: " << _name << " attacks " << target << ". ";
         std::cout << target << " looses hit points." << std::endl;
         return ;
 }
