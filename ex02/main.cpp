@@ -1,12 +1,12 @@
 #include "ClapTrap.hpp"
-#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
 int     main(void)
 {
 
 
-        FragTrap obj2("ST.Morda");
+        FragTrap obj2("Zbyszek");
         FragTrap newObj2;
 
         newObj2 = obj2;
@@ -17,8 +17,8 @@ int     main(void)
         std::cout << "newObj2: " << newObj2.getName() << " " << newObj2.getHitPoints() << " ";
         std::cout << newObj2.getEnergyPoints() << " " << newObj2.getAttackDamage() << std::endl;
 
-        newObj2.setName("ST.Bogdan");
-        FragTrap newerObj2("ST.Marian");
+        newObj2.setName("Bogdan");
+        FragTrap newerObj2("Marian");
         FragTrap newestObj2(newerObj2);
 
         std::cout << "newObj2: " << newObj2.getName() << " " << newObj2.getHitPoints() << " ";
@@ -30,10 +30,10 @@ int     main(void)
         std::cout << "newestObj2: " << newestObj2.getName() << " " << newestObj2.getHitPoints() << " ";
         std::cout << newestObj2.getEnergyPoints() << " " << newestObj2.getAttackDamage() << std::endl;
 
-        obj2.attack("ST.Bogdan");
+        obj2.attack("Bogdan");
         newObj2.takeDamage(6);
         newObj2.beRepaired(2);
-        newerObj2.attack("ST.Bogdan");
+        newerObj2.attack("Bogdan");
         newObj2.takeDamage(6);
         newObj2.beRepaired(2);
 
