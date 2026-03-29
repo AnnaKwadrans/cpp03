@@ -5,11 +5,6 @@
 
 class ScavTrap : public ClapTrap
 {
-        //std::string     _name;
-        //unsigned int    _hitPoints;
-        //int             _energyPoints;
-        //int             _attackDamage;
-
         public:
 
         ScavTrap(void);

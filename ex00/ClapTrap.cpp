@@ -90,7 +90,10 @@ void            ClapTrap::takeDamage(unsigned int amount)
         if (_hitPoints)
         {
                 std::cout << _name << " takes damage of " << amount << ". ";
-                _hitPoints -= amount;
+                if (amount >= _hitPoints)
+                        _hitPoints = 0;
+                else
+                        _hitPoints -= amount;
                 std::cout << "Curent hit points: " << _hitPoints << "." << std::endl;
         }
         else
@@ -102,7 +105,7 @@ void            ClapTrap::beRepaired(unsigned int amount)
 {
         if (_hitPoints)
         {
-                std::cout << _name << " takes regains " << amount << " points. ";
+                std::cout << _name << " regains " << amount << " points. ";
                 _hitPoints += amount;
                 std::cout << "Current hit points: " << _hitPoints << "." << std::endl;
         }

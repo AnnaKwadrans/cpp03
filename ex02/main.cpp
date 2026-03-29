@@ -31,10 +31,10 @@ int     main(void)
         std::cout << newestObj2.getEnergyPoints() << " " << newestObj2.getAttackDamage() << std::endl;
 
         obj2.attack("Bogdan");
-        newObj2.takeDamage(6);
+        newObj2.takeDamage(90);
         newObj2.beRepaired(2);
         newerObj2.attack("Bogdan");
-        newObj2.takeDamage(6);
+        newObj2.takeDamage(19);
         newObj2.beRepaired(2);
 
         newerObj2.highFivesGuys();

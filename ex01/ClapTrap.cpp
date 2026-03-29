@@ -20,7 +20,7 @@ ClapTrap::ClapTrap(ClapTrap const & cpy)
         return ;
 }
 
-ClapTrap&       ClapTrap::operator=(ClapTrap const & src) // mensaje personalizado?
+ClapTrap&       ClapTrap::operator=(ClapTrap const & src)
 {
         std::cout << "ClapTrap: Copy assign operator called" << std::endl;
         if (this != &src)
@@ -73,6 +73,7 @@ int     ClapTrap::getAttackDamage() const
 {
         return (this->_attackDamage);
 }
+
 void            ClapTrap::setAttackDamage(int attackDamage)
 {
         this->_attackDamage = attackDamage;
@@ -91,8 +92,11 @@ void            ClapTrap::takeDamage(unsigned int amount)
         if (_hitPoints)
         {
                 std::cout << _name << " takes damage of " << amount << ". ";
-                _hitPoints -= amount;
-                std::cout << "Curent hit points: " << _hitPoints << "." << std::endl;
+                if (amount >= _hitPoints)
+                        _hitPoints = 0;
+                else
+                        _hitPoints -= amount;
+                std::cout << "Current hit points: " << _hitPoints << "." << std::endl;
         }
         else
                 std::cout << _name << " has no hit points left." << std::endl;
@@ -103,7 +107,7 @@ void            ClapTrap::beRepaired(unsigned int amount)
 {
         if (_hitPoints)
         {
-                std::cout << _name << " takes regains " << amount << " points. ";
+                std::cout << _name << " regains " << amount << " points. ";
                 _hitPoints += amount;
                 std::cout << "Current hit points: " << _hitPoints << "." << std::endl;
         }
