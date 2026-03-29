@@ -2,7 +2,7 @@
 
 int     main(void)
 {
-        ClapTrap obj("Morda");
+        ClapTrap obj("Zbyszek");
         ClapTrap newObj;
 
         newObj = obj;
